@@ -13,7 +13,7 @@ The submitted scope specifies MySQL. The local screenshots show a SQL file named
 | Seat | Seat and state/type | Screen relationship, availability state |
 | Booking | Reservation | User/show/seat links, status, duplicate rules |
 
-## Conceptual relationships (not a verified ERD)
+## Conceptual relationships
 - City may contain many theatres.
 - Theatre may contain many screens.
 - Screen may contain many seats.
