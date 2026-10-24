@@ -30,8 +30,3 @@ The target stack is React, Spring Boot and MySQL. Confirm actual frontend setup,
 5. Backend validates user, show and seat data.
 6. Backend stores the booking and updates seat state according to implemented rules.
 7. UI displays confirmation and a summary; history is available as specified.
-
-Verify every step against actual code. Do not claim payment, email delivery, real-time seat locking or duplicate-booking prevention unless implemented and tested.
-
-## Local codebase observation
-The screenshots show a Spring Boot/Maven project named `BMS` with controllers for booking, city, movie, screen, seat, show, theatre and user; DTOs, entities, enums, repositories, a service package, SQL file, `UI` folder and Postman resources. This establishes project structure but does not prove that all expected features are complete or that the UI is React-based.
