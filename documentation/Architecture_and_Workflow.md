@@ -1,44 +1,10 @@
-# Tixify — Architecture and Workflow
+# Tixify Use Case Diagram
 
-## Target architecture from the submitted scope
-```text
-React UI
-  ├─ Movie discovery/search
-  ├─ Theatre/show selection
-  ├─ Seat selection
-  └─ Booking confirmation/history
-          |
-          v
-Spring Boot REST API
-  ├─ Controllers
-  ├─ DTOs
-  ├─ Services / business rules
-  ├─ Repositories / entities
-  └─ Validation and error handling
-          |
-          v
-        MySQL
-```
+## Purpose
 
-The target stack is React, Spring Boot and MySQL. Confirm actual frontend setup, routes, endpoints, ORM configuration and authentication behavior in the repository.
+This simple diagram shows the main interactions between Tixify users and the proposed system. It is suitable for the GitHub repository README and for a beginner-level project presentation.
 
-## Intended booking workflow
-1. User browses/searches movies.
-2. User selects a theatre, screen, date and showtime.
-3. User views the seat layout and selects available seats.
-4. User submits a booking request.
-5. Backend validates user, show and seat data.
-6. Backend stores the booking and updates seat state according to implemented rules.
-7. UI displays confirmation and a summary; history is available as specified.
-8. # Tixify
-
-**Tixify** is a proposed movie discovery and cinema ticket booking platform. The updated scope adds private, movie-specific discussions so customers can invite friends and talk about a film.
-
-## Use case diagram
-
-This beginner-friendly overview shows the main things each user can do in Tixify. The diagram uses GitHub-supported Mermaid flowchart syntax.
-
-
+```mermaid
 flowchart LR
     Visitor[Visitor]
     Customer[Customer]
@@ -64,7 +30,6 @@ flowchart LR
 
     Visitor --> Browse
     Visitor --> Register
-
     Customer --> Browse
     Customer --> Register
     Customer --> Shows
@@ -77,43 +42,22 @@ flowchart LR
     Customer --> StartDiscussion
     Customer --> Invite
     Customer --> Talk
-
     Admin --> Catalog
     Admin --> Schedule
-
     Verifier -.-> Verify
+```
 
+## Simple explanation
 
-**How to read it:** Each arrow means that the person can use that feature. The Tixify box is the system boundary. Seat holding and QR verification are marked proposed; check their implementation status before presenting them as completed features.
+- A **Visitor** can browse movies and register.
+- A **Customer** can browse movies, view shows, select seats, book tickets, view booking information, and join movie discussions.
+- An **Administrator** manages the movie and cinema schedule information.
+- A **Cinema ticket verifier** is shown only for the proposed QR ticket-checking feature.
+- The box labelled **Tixify System** contains the features provided by the application.
+- A dotted arrow marks the proposed ticket-verification interaction.
 
-## Main modules
+## Presentation script
 
-1. **User Authentication and Management** — customer and administrator accounts.
-2. **Movie Discovery and Management** — movie browsing, search, filters, and catalog management.
-3. **Theater and Show Management** — cities, theaters, screens, seats, and showtimes.
-4. **Interactive Seat Selection** — view and choose seats; temporary seat holds are proposed.
-5. **Booking and Ticket Confirmation** — bookings, receipts, ticket PDFs, and optional email.
-6. **Friends Movie Discussion** — private movie discussions, invitations, and messages; proposed in the updated scope.
+> “This use case diagram shows what each type of user can do in Tixify. Visitors can browse movies and register. Customers can view showtimes, choose seats, book tickets, and join discussions about movies with friends. Administrators manage the movie and theater information. QR ticket checking is a proposed feature.”
 
-## Technology
-
-- Frontend: HTML, CSS, JavaScript
-- Backend: Java 21 and Spring Boot REST API
-- Database: MySQL
-- Local API default: `http://localhost:8081/api`
-
-## Documentation
-
-- [Pre-development synopsis](docs/SYNOPSIS.md)
-- [Updated scope and requirements](docs/REQUIREMENTS.md)
-- [System design](docs/SYSTEM-DESIGN.md)
-- [Database ERD](docs/DATABASE-ERD.md)
-- [API reference](docs/API.md)
-- [Setup guide](docs/SETUP.md)
-- [Verification plan](docs/TEST-PLAN.md)
-- [Project plan](docs/PROJECT-PLAN.md)
-
-## Project status
-
-This is an academic project prototype. The synopsis and requirements describe the proposed updated scope. Secure backend authorization, temporary seat locks, transaction-safe reservations, ticket verification, and Friends Movie Discussion need implementation and verification before being called complete. There is no payment gateway in the current scope.
-
+Before presenting, confirm with the guide which proposed features are in the approved project scope. Do not describe a proposed feature as already implemented.
