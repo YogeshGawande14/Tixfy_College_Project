@@ -1,4 +1,4 @@
-digraph ERD {
+crete ERD {
  graph [rankdir=LR, splines=ortho, nodesep=0.45, ranksep=0.85, pad=0.2, bgcolor="white", fontname="Arial", label="Tixify — Entity Relationship Diagram (conceptual from seed SQL)", labelloc=t, fontsize=20];
  node [shape=plain, fontname="Arial"];
  edge [dir=both, arrowtail=none, arrowhead=vee, arrowsize=0.7, color="#475569", fontname="Arial", fontsize=9];
